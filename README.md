@@ -4,7 +4,7 @@ Este repositório contém a estrutura de um sistema inteligente para reconhecime
 
 ## 👥 Integrantes do Grupo
 
-- Andre
+- André Guimarães Barros
 - Athila
 - Bernardo Vargens Broedel
 - Stefanio
