@@ -1,0 +1,265 @@
+/* ================================
+   Página — Meus Pets
+   ================================ */
+
+.pets-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.pets-header-text h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.pets-header-text p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.btn-add-pet {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111;
+  background: #e8e8f0;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-add-pet:hover {
+  background: #ffffff;
+  transform: translateY(-1px);
+}
+
+.pets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.pets-empty {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: 3rem 0;
+  font-size: 0.95rem;
+  grid-column: 1 / -1;
+  background: var(--bg-card);
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+}
+
+/* ================================
+   Card do Pet
+   ================================ */
+
+.pet-card {
+  display: flex;
+  flex-direction: column;
+  background: #15151c;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.pet-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.pet-card-cover {
+  position: relative;
+  height: 100px;
+  background: linear-gradient(135deg, #e0eaff, #dbeafe);
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.pet-card-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-icon-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: #4b5563;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-icon-bg:hover {
+  background: #fff;
+  transform: scale(1.05);
+}
+
+.btn-icon-bg.delete {
+  color: #ef4444;
+}
+
+.pet-card-body {
+  position: relative;
+  padding: 0 1.25rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pet-avatar-wrapper {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  margin-top: -36px;
+  margin-bottom: 0.75rem;
+  border-radius: 50%;
+  background: #15151c;
+  padding: 4px;
+}
+
+.pet-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #2a2a35;
+}
+
+.pet-avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #2a2a35;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.pet-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.pet-info-text {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  margin-bottom: 1.25rem;
+}
+
+.pet-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.pet-stat-box {
+  background: #1f2937;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.pet-stat-label {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.pet-stat-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.pet-stat-value.success {
+  color: #10b981;
+  font-size: 0.85rem;
+}
+
+.pet-card-footer {
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: #1e293b;
+  padding: 1rem 1.25rem;
+}
+
+.btn-manage-photos {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #0f172a;
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.625rem;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-manage-photos:hover {
+  background: #1e293b;
+}
+
+/* ================================
+   Upload Avatar Form
+   ================================ */
+
+.avatar-upload-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar-preview {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #2a2a35;
+  border: 2px solid var(--border);
+}
+
+.avatar-upload-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.avatar-upload-btn input[type="file"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}

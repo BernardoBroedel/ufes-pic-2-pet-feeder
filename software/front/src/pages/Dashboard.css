@@ -1,0 +1,243 @@
+/* ================================
+   Painel de Controle (Dashboard)
+   ================================ */
+
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.dashboard-header p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* Estrutura Principal: 2 Colunas */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Área Esquerda */
+.dashboard-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Cards do Topo */
+.top-cards-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .top-cards-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dash-card {
+  background: #15151c;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.dash-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.dash-card-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.dash-card-icon {
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+}
+
+.dash-card-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.dash-card-subtitle {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Online Indicator */
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+}
+
+/* Barra de Progresso Ração */
+.progress-bar-bg {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  margin: 0.5rem 0 0.75rem 0;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: #fff;
+  border-radius: 2px;
+  transition: width 0.5s ease-out;
+}
+
+/* Gráfico Container */
+.chart-card {
+  min-height: 400px;
+}
+
+.chart-header {
+  margin-bottom: 2rem;
+}
+
+.chart-header h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.chart-header p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.chart-wrapper {
+  width: 100%;
+  height: 300px;
+}
+
+/* Custom Tooltip Recharts */
+.custom-tooltip {
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  border: none;
+}
+
+.custom-tooltip .label {
+  color: #9ca3af;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.custom-tooltip .intro {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+/* Área Direita: Atividades */
+.sidebar-card {
+  height: 100%;
+}
+
+.activities-header {
+  margin-bottom: 1.5rem;
+}
+
+.activities-header h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.activities-header p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.activities-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.activity-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: bold;
+}
+
+.activity-icon.feeding {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+.activity-icon.system {
+  background: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+}
+
+.activity-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.activity-time {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.activity-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: right;
+}
