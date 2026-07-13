@@ -115,10 +115,7 @@ Certifique-se de ter as seguintes ferramentas instaladas na sua máquina:
 
 ### 1. Clonar o repositório
 
-```bash
-git clone https://github.com/BernardoBroedel/pic-2-pet-feeder.git
-cd pic-2-pet-feeder
-```
+Primeiro clone o repositório.
 
 ---
 
