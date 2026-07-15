@@ -5,9 +5,9 @@ Este repositório contém a estrutura de um sistema inteligente para reconhecime
 ## 👥 Integrantes do Grupo
 
 - André Guimarães Barros
-- Athila
+- Athila Archanji Rodrigues
 - Bernardo Vargens Broedel
-- Stefanio
+- Stefânio Soares Junior
 
 ---
 
@@ -98,6 +98,16 @@ Para a montagem física do Alimentador Inteligente, foram utilizados os seguinte
 - **Maquete 3D do PetFeeder**: Estrutura mecânica impressa em 3D que abriga a eletrônica, o reservatório principal de ração e o prato do pet.
 
 ---
+
+## 🖼️ Diagrama e Foto do Projeto Real
+
+Uma visão rápida do diagrama do sistema e uma foto do protótipo montado estão abaixo.
+
+![Diagrama do Projeto](assets/images/diagrama.png)
+
+![Projeto Real](assets/images/projeto.jpeg)
+
+
 
 ## 🚀 Como Instalar e Rodar
 
