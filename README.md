@@ -5,7 +5,7 @@ Este repositório contém a estrutura de um sistema inteligente para reconhecime
 ## 👥 Integrantes do Grupo
 
 - André Guimarães Barros
-- Athila Archanji Rodrigues
+- Áthila Archanji Rodrigues
 - Bernardo Vargens Broedel
 - Stefânio Soares Junior
 
@@ -123,58 +123,59 @@ Certifique-se de ter as seguintes ferramentas instaladas na sua máquina:
 | **Arduino IDE**   | 2.x           | [arduino.cc](https://www.arduino.cc/en/software) *(apenas para o firmware)* |
 | **Git**           | —             | [git-scm.com](https://git-scm.com/)                                     |
 
-### 1. Clonar o repositório
+### 1. Clonagem do Repositório
 
-Primeiro clone o repositório.
+Para começar, faça o clone deste repositório para a sua máquina local.
 
 ---
 
-### 2. Software (Docker + Backend + Frontend)
+### 2. Stack de Software (Docker, Backend e Frontend)
 
-A stack de software inclui um banco PostgreSQL (Docker), API backend (Express/TypeScript) e painel frontend (React/Vite).
+Nossa arquitetura de software é composta por um banco de dados PostgreSQL (via Docker), uma API no backend (Express/TypeScript) e uma interface web no frontend (React/Vite).
 
-> 📖 **Instruções completas de instalação, endpoints da API, variáveis de ambiente e troubleshooting estão no [README do Software](./software/README.md).**
+> 📖 **Para instruções detalhadas de instalação, configuração de variáveis de ambiente, endpoints da API e solução de problemas, consulte o [README do Software](./software/README.md).**
 
 ---
 
 ### 3. Firmware da ESP32-CAM (C++)
 
-O código captura a imagem da câmera, faz as leituras da balança (HX711) e envia esses dados via WebSocket diretamente para o Backend. Também escuta comandos WebSocket para rotacionar o motor (liberar ração).
+O microcontrolador é responsável por capturar as imagens, ler os dados de peso da balança (módulo HX711) e transmitir tudo em tempo real para o backend via WebSocket. Ele também aguarda comandos pela mesma conexão para acionar o motor de passo e liberar a ração.
 
-> 📖 **Instruções completas de configuração, bibliotecas necessárias, pinagem e upload estão no [README do Hardware](./hardware/README.md).**
+> 📖 **Os detalhes sobre pinagem, dependências de bibliotecas e o processo de upload do código estão disponíveis no [README do Hardware](./hardware/README.md).**
 
 ---
 
-### ▶️ Resumo Rápido — Subindo tudo
+### ▶️ Guia de Início Rápido
+
+Siga os comandos abaixo utilizando terminais separados para inicializar todo o sistema localmente:
 
 ```bash
-# Terminal 1 — Banco de dados
+# Terminal 1 — Iniciando o banco de dados
 cd software
 docker-compose up -d
 
-# Terminal 2 — Backend
+# Terminal 2 — Iniciando o Backend
 cd software/back
 npm install
-npm run db:generate   # apenas na primeira vez
-npm run db:migrate    # apenas na primeira vez
+npm run db:generate   # Executar apenas na primeira vez
+npm run db:migrate    # Executar apenas na primeira vez
 npm run dev
 
-# Terminal 3 — Frontend
+# Terminal 3 — Iniciando o Frontend
 cd software/front
 npm install
 npm run dev
 ```
 
-Após tudo rodando, acesse **<http://localhost:5173>** no navegador.
+Com todos os serviços em execução, abra o seu navegador e acesse: **<http://localhost:5173>**
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Hardware / Firmware**: ESP32-CAM (C++ / Arduino IDE) com integração a balança (HX711) e motor de passo.
-- **Comunicação**: WebSockets (`ws` + `WebSocketsClient` por Markus Sattler) e Socket.io.
-- **Inteligência Artificial (Edge AI)**: TensorFlow.js / modelo COCO-SSD (rodando client-side).
-- **Plataforma Web**:
-  - **Frontend**: React, TypeScript, Vite, TailwindCSS.
-  - **Backend**: Node.js, Express, TypeScript, Drizzle ORM.
-  - **Banco de Dados**: PostgreSQL (Dockerizado).
+- **Hardware e Firmware**: ESP32-CAM (C++ / Arduino IDE) com integração ao módulo de balança HX711 e motor de passo.
+- **Comunicação**: WebSockets (biblioteca `WebSocketsClient` de Markus Sattler e pacote `ws`) e Socket.io.
+- **Inteligência Artificial (Edge AI)**: TensorFlow.js com o modelo COCO-SSD (executado no client-side).
+- **Frontend**: React, TypeScript, Vite e TailwindCSS.
+- **Backend**: Node.js, Express, TypeScript e Drizzle ORM.
+- **Banco de Dados**: PostgreSQL (rodando em container Docker).

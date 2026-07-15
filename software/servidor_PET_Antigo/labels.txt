@@ -1,0 +1,3 @@
+0 Persian
+1 Sphynx 
+2 NaoGato
